@@ -1,0 +1,41 @@
+$color-border: blue;
+$color-background: white;
+$padding-base: 3px;
+$border-width: 4px;
+$font-size-heading: 3vw;
+$font-style-heading: italic;
+
+// Mixin para estilos comunes (borde, relleno, fondo)
+@mixin common-styles($border-width, $border-color, $background-color) {
+    border: #{$border-width} solid #{$border-color};
+    background-color: #{$background-color};
+    padding: $padding-base;
+}
+
+// Mixin para centrar elementos
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.marco, .contenedorImagen {
+    @include common-styles($border-width, $color-border, $color-background);
+}
+
+.contenedorImagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.encabezado {
+    font-size: $font-size-heading;
+    font-style: $font-style-heading;
+    @include center;
+}

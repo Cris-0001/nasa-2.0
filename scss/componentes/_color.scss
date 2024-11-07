@@ -1,0 +1,11 @@
+$fontColor: black;
+$titulos: white;
+
+body{
+    background-color: $fontColor;
+}
+
+h1,h2{
+    text-align: center;
+    color: $titulos;
+}
